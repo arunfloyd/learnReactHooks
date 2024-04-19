@@ -8,6 +8,12 @@ import UseEffectCounter from "./components/UseEffectCounter";
 import UseEffectHooKMouse from "./components/UseEffectHooKMouse";
 import TimerHook from "./components/TimerHook";
 import DataFetching from "./components/DataFetching";
+import UseContextA from "./components/UseContextA";
+import UseContextTricky from "./components/UseContextTricky";
+
+export const UserContext = React.createContext();
+export const LevelContext = React.createContext();
+
 function App() {
   return (
     <div className="App">
@@ -16,9 +22,15 @@ function App() {
       <UseStateHookObject />
       <UseStateHookArray />
       <UseEffectCounter />
-      <UseEffectHooKMouse/>
-      <TimerHook/>
-      <DataFetching/>
+      <UseEffectHooKMouse />
+      <TimerHook />
+      <DataFetching />
+      <UserContext.Provider value={"Arun"}>
+        <LevelContext.Provider value={12}>
+          <UseContextA />
+          <UseContextTricky />
+        </LevelContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }

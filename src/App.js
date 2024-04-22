@@ -10,6 +10,10 @@ import TimerHook from "./components/TimerHook";
 import DataFetching from "./components/DataFetching";
 import UseContextA from "./components/UseContextA";
 import UseContextTricky from "./components/UseContextTricky";
+import UseReducerCounter from "./components/UseReducerCounter";
+import UseReducerCounterObject from "./components/UseReducerCounterObject";
+import UseRefFocusInput from "./components/UseRefFocusInput";
+
 
 export const UserContext = React.createContext();
 export const LevelContext = React.createContext();
@@ -31,6 +35,9 @@ function App() {
           <UseContextTricky />
         </LevelContext.Provider>
       </UserContext.Provider>
+      <UseReducerCounter />
+      <UseReducerCounterObject/>
+      <UseRefFocusInput/>
     </div>
   );
 }

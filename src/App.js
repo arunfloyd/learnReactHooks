@@ -13,6 +13,10 @@ import UseContextTricky from "./components/UseContextTricky";
 import UseReducerCounter from "./components/UseReducerCounter";
 import UseReducerCounterObject from "./components/UseReducerCounterObject";
 import UseRefFocusInput from "./components/UseRefFocusInput";
+import CallbackHooks from "./components/CallbackHooks";
+import UseReduce from "./components/UseReduce";
+import UseRedObject from "./components/UseRedObject";
+
 
 
 export const UserContext = React.createContext();
@@ -21,8 +25,8 @@ export const LevelContext = React.createContext();
 function App() {
   return (
     <div className="App">
-      <ClassCounter />
-      <HookCounter />
+      {/* <ClassCounter />
+      // <HookCounter />
       <UseStateHookObject />
       <UseStateHookArray />
       <UseEffectCounter />
@@ -37,7 +41,10 @@ function App() {
       </UserContext.Provider>
       <UseReducerCounter />
       <UseReducerCounterObject/>
-      <UseRefFocusInput/>
+      <UseRefFocusInput/> */}
+      {/* <CallbackHooks/>
+      <UseReduce/> */}
+      <UseRedObject/>
     </div>
   );
 }

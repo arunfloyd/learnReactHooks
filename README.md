@@ -1,71 +1,80 @@
-# Getting Started with Create React App
+   >>>  React Hooks !!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-> State variable - super powerful variable you can use Hook 
 
-## Available Scripts
+-> Noraml JS Utility given by React is Hook super power 
 
-In the project directory, you can run:
+->Types of  important !! Hooks 
+     
+      -> useState() - Superpowerful state variable in React
+                    - Import {useState} from "react" : import as named 
+                    - When ever a state variable updates react rerender the component
 
-### `npm start`
+      -> useReducer()- 
+                      useReducer is a hook in React that allows you to manage state with a reducer function.
+                      It's similar to useState, but it's more suitable for managing complex state logic and debugging.
+            
+      -> useEffect() - UseEffect Hooks which is normal JS function in which react give super power
+                       which have specific function purpose
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+                     - useEffect(which have two arguments)    
+                     - when this call back function called is after the render 
+               Eg:-  
+                     useEffect(() => {
+                        console.log("UseEffect");
+                             }, []);
+                    - First the body function will render & after the render cycle the useEffect callback is called  
+     
+     -> useCallback() - allows you to memoize a callback function, preventing it from being recreated on every render
+                    
+                      - The useCallback hook in React is used to prevent a function from being recreated on every render.
+                         This is especially useful if you're passing a function as a prop to a child component that uses the shouldComponentUpdate method or React.memo to prevent unnecessary re-renders.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+                Eg:- import { useCallback } from 'react';
 
-### `npm test`
+                     function ProductPage({ productId, referrer, theme }) {
+                     const handleSubmit = useCallback((orderDetails) => {
+                     post('/product/' + productId + '/buy', { referrer, orderDetails });
+                     }, [productId, referrer]);
+                     return ();}         
+     
+     -> useMemo () - useMemo is a hook in React that allows you to memoize a value so that it is only recalculated when the  dependencies change.
+                    This can help improve performance by avoiding unnecessary recalculations.        
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+                Eg:- import React, { useMemo } from 'react';
 
-### `npm run build`
+                     function MyComponent({ data }) {
+                     const expensiveOperation = useMemo(() => {
+                     // Perform a costly computation based on data
+                     return data.filter(item => item > 5);
+                     }, [data]);
+                     return (
+                     <div>
+                     <p>Result of expensive operation: {expensiveOperation}</p>
+                     </div>
+                     );
+                     }          
+     -> React.memo():
+                    React.memo is a higher-order component that memoizes a functional component, preventing unnecessary re-renders when the component's props have not changed.
+                    It caches the output of the component and only re-renders it if its props have changed. 
+                    Useful when a component's rendering is expensive and you want to avoid unnecessary re-renders.    
+                
+                Eg:- const MemoizedComponent = React.memo((props) => {
+                     /\* component code */\});                
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+     -> React.lazy() :
+                     React.lazy is a function that allows you to define a component that will be loaded lazily, only when it's  needed.
+                     This is useful for code splitting, where you want to split your code into smaller chunks that can be loaded separately.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+                Eg:- import React, { Suspense } from 'react';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+                    const MyLazyComponent = React.lazy(() => import('./MyLazyComponent'));
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# learnReactHooks
+                     function MyComponent() {
+                        return (
+                            <div>
+                            <Suspense fallback={<div>Loading...</div>}>
+                            <MyLazyComponent />
+                            </Suspense>
+                            </div>
+                            );}     

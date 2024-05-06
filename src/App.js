@@ -16,6 +16,10 @@ import UseRefFocusInput from "./components/UseRefFocusInput";
 import CallbackHooks from "./components/CallbackHooks";
 import UseReduce from "./components/UseReduce";
 import UseRedObject from "./components/UseRedObject";
+import Samble from "./components/Samble";
+import UseMemo from "./components/UseMemo";
+import UseCallback from "./components/UseCallback";
+import ReactLazy from "./components/ReactLazy";
 
 
 
@@ -44,7 +48,13 @@ function App() {
       <UseRefFocusInput/> */}
       {/* <CallbackHooks/>
       <UseReduce/> */}
-      <UseRedObject/>
+      {/* <UseRedObject/> */}
+      {/* <Samble/> */}
+      
+       {/* <UseMemo/>
+        */}
+        {/* <UseCallback/> */}
+        <ReactLazy/>
     </div>
   );
 }

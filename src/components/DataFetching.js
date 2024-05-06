@@ -5,9 +5,9 @@ const DataFetching = () => {
   const [id, setId] = useState(1);
   const [idFromButtonClick, setIdFromButtonClick] = useState(1);
 
-  const handleClick =()=>{
-    setIdFromButtonClick(id)
-  }
+  const handleClick = () => {
+    setIdFromButtonClick(id);
+  };
   useEffect(() => {
     axios
       .get(`https://jsonplaceholder.typicode.com/posts/${idFromButtonClick}`)
@@ -22,7 +22,9 @@ const DataFetching = () => {
   return (
     <div>
       <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
-      <button type="button" onClick={handleClick}> Click To Change</button>
+      <button type="button" onClick={handleClick}>
+        Click To Change
+      </button>
       <div>{post.title}</div>
       {/* <ul>
         {post.map((posts) => (

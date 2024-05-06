@@ -25,9 +25,9 @@
                              }, []);
  First the body function will render & after the render cycle the useEffect callback is called  
      
- -> useCallback() - allows you to memoize a callback function, preventing it from being recreated on every render
-                                          - The useCallback hook in React is used to prevent a function from being recreated on every render.
-                         This is especially useful if you're passing a function as a prop to a child component that uses the shouldComponentUpdate method or React.memo to prevent unnecessary re-renders.
+ -> useCallback() - Allows you to memoize a callback function, preventing it from being recreated on every render
+                  - The useCallback hook in React is used to prevent a function from being recreated on every render.
+                  - This is especially useful if you're passing a function as a prop to a child component that uses the       shouldComponentUpdate method or React.memo to prevent unnecessary re-renders.
 
                 Eg:- import { useCallback } from 'react';
 
